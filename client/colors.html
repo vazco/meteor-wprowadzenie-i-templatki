@@ -1,0 +1,34 @@
+<head>
+  <title>colors</title>
+</head>
+
+<body>
+<div class="panel panel-default">
+    <div class="panel-body">
+          <h1>Hej {{> clock}}</h1>
+
+          {{> hello}}
+        </div>
+    </div>
+</body>
+
+<template name="hello">
+    <form>
+        <input class="js-name">
+        <button class="btn btn-submit">ok</button>
+    </form>
+    {{#each items}}
+        {{> helloButton}}
+        <p>You've pressed the button {{counter}} times.</p>
+    {{/each}}
+    {{> lists}}
+</template>
+
+<template name="helloButton">
+    <button class="btn btn-submit">Click {{name}}</button>
+</template>
+
+<template name="clock">
+    <label class="label label-default">{{getClock}}</label>
+</template>
+
